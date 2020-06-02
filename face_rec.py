@@ -1,16 +1,16 @@
 """Implementation of face recognition with python face recognition libraray"""
 #importing necessery ibraries
 import face_recognition
-import os
 import cv2
-from google.colab.patches import cv2_imshow # for showing images in google colab
+import os
+from google.colab.patches import cv2_imshow # for showing images in google colab for gpu support
 
 KNOWN_FACES  = "/content/facerec/known_faces" # directory for known facs
 UNKNOWN_FACES = "/content/facerec/unknown_faces" #directory for unknown faces
 TOLERENCE  = 0.5 #sensitivity for comparing faces
 FRAME_THICKNESS = 3
 FONT_THICKNESS = 2
-MODEL = "cnn" # default: 'hog', other one can be 'cnn' - CUDA accelerated (if available) deep-learning pretrained model
+MODEL = "cnn" # default: 'hog', other one can be 'cnn' 
 print("loading known faces")
 known_faces = []
 known_names =[]
