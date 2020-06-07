@@ -8,8 +8,8 @@ from google.colab.patches import cv2_imshow # for showing images in google colab
 KNOWN_FACES  = "/content/facerec/known_faces" # directory for known facs
 UNKNOWN_FACES = "/content/facerec/unknown_faces" #directory for unknown faces
 TOLERENCE  = 0.5 #sensitivity for comparing faces
-FRAME_THICKNESS = 3
-FONT_THICKNESS = 2
+FRAME_THICKNESS = 4
+FONT_THICKNESS = 3
 MODEL = "cnn" # default: 'hog', other one can be 'cnn' 
 print("loading known faces")
 known_faces = []
@@ -52,4 +52,4 @@ for filename in os.listdir(UNKNOWN_FACES): #iterating over each image in unknown
       cv2.putText(image, match, (face_location[3]+10 , face_location[2]+15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200,200,200), FONT_THICKNESS)
   cv2_imshow(image) #showing the image in google colab else use cv2.imshow(filename, image)
   cv2.waitKey(1) # waitkey of 1ms and iterating over images
- # cv2.destroyWindow(filename)
+ 
