@@ -11,7 +11,7 @@ TOLERENCE  = 0.5 #sensitivity for comparing faces
 FRAME_THICKNESS = 4
 FONT_THICKNESS = 3
 MODEL = "cnn" # default: 'hog', other one can be 'cnn' 
-print("loading known faces")
+print("Loading Known Faces")
 known_faces = []
 known_names =[]
 
@@ -22,7 +22,7 @@ for name in os.listdir(KNOWN_FACES): #iterating over each directory in known_fac
     known_faces.append(encoding) # appending the encodings of images to an array
     known_names.append(name) # appending the corresponding name for the encodings
 
-print("processing unkmonw faces") # processing for unknown images
+print("Processing Unkmonw Faces") # processing for unknown images
 for filename in os.listdir(UNKNOWN_FACES): #iterating over each image in unknown_faces directory
   print(filename)
   image = face_recognition.load_image_file(f"{UNKNOWN_FACES}/{filename}")
@@ -38,7 +38,7 @@ for filename in os.listdir(UNKNOWN_FACES): #iterating over each image in unknown
       match = known_names[results.index(True)]
       print(f"Match found: {match}")
       
-"""creating boxes around the face"""
+"""Creating Boxes Around The Face"""
       top_left = (face_location[3], face_location[0]) 
       bottom_right = (face_location[1], face_location[2])
 
